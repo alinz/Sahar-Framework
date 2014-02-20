@@ -1,0 +1,58 @@
+{
+    "properties": {
+        "version": "1.0",
+        "platform": "platform-${version}-final"
+    },
+    "annotations": [
+        {
+            "id": "component",
+            "class": "sf.core.annotation.implementation.Component",
+            "enable": true
+        },
+        {
+            "id": "classRequestMapping",
+            "class": "sf.core.annotation.implementation.ClassRequestMapping",
+            "enable": true
+        },
+        {
+            "id": "methodRequestMapping",
+            "class": "sf.core.annotation.implementation.MethodRequestMapping",
+            "enable": true
+        },
+        {
+            "id": "variableResource",
+            "class": "sf.core.annotation.implementation.VariableResource",
+            "enable": true
+        }
+    ],
+    "auto_scan_paths": [
+        "src/app/"
+    ],
+    "securities": [
+
+    ],
+    "resources": [
+        {
+            "id": "main",
+            "class": "app.Main",
+            "args": [
+                {
+                    "type": "ref",
+                    "value": "dao"
+                },
+                {
+                    "type": "object",
+                    "value": 2
+                }
+            ],
+            "singleton": true
+        },
+        {
+            "id": "dao",
+            "class": "app.dao.Dao",
+            "args": [],
+            "singleton": true
+        }
+    ],
+    "start": "main"
+}
